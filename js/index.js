@@ -9,7 +9,7 @@ async function displayEvents(eventType = "All") {
     eventFeed.innerHTML = "";
 
     // Construct API URL based on eventType
-    let apiUrl = "http://localhost:7000/events/";
+    let apiUrl = "https://codecampus-server.onrender.com/events/";
     if (eventType !== "All") {
       apiUrl += `${eventType}`;
     }
@@ -93,7 +93,7 @@ function createEventHTML(
 
 // Function to handle attendance button click
 async function attendButtonFunction(button_id) {
-  const API_URL = `http://localhost:7000/events/${button_id}`;
+  const API_URL = `https://codecampus-server.onrender.com/events/${button_id}`;
   try {
     // Send a PATCH request to mark attendance
     const response = await fetch(API_URL, {
